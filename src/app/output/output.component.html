@@ -1,33 +1,33 @@
 <div class="containerOutput" [hidden]="!search">
 <div class="containerLocationData">
-  <span class="LocationDataSpan">{{this.cityNameOutput}}</span>
-  <span class="LocationDataSpan">{{this.countryOutput}}</span>
-  <span class="LocationDataSpan"><span>Lng: </span>{{this.longitudeOutput}}<span> Lat: </span>{{this.latitudeOutput}}</span>
+  <span class="LocationDataSpan">{{data?.name}}</span>
+  <span class="LocationDataSpan">{{this.data?.sys.country}}</span>
+  <span class="LocationDataSpan"><span>Lng: </span>{{data?.coord.lon}}<span> Lat: </span>{{data?.coord.lat}}</span>
 </div> <hr>
  <div class="containerWeatherData">
     <div class="containerWeatherDataSpan">
       <span class="headerSpan">Weather</span>
-      <span class="data">{{this.weatherOutput}}</span>
+      <span class="data">{{data?.weather[0].main}}</span>
     </div>
     <div class="containerWeatherDataSpan">
       <span class="headerSpan">Temperature</span>
-      <span class="data">{{this.tempOutput}}</span>
+      <span class="data">{{data?.main.temp}}{{units?.temp}}</span>
     </div>
    <div class="containerWeatherDataSpan">
      <span class="headerSpan">Wind Speed</span>
-     <span class="data">{{this.windSpeedOutput}}</span>
+     <span class="data">{{data?.wind.speed}}{{units?.windSpeed}}</span>
    </div>
    <div class="containerWeatherDataSpan">
      <span class="headerSpan">Description</span>
-     <span class="dataDescription">{{this.weatherDescriptionOutput}}</span>
+     <span class="dataDescription">{{data?.weather[0].description}}</span>
    </div>
    <div class="containerWeatherDataSpan">
      <span class="headerSpan">Humidity</span>
-     <span class="data">{{this.humidityOutput}}%</span>
+     <span class="data">{{data?.main.humidity}}%</span>
    </div>
    <div class="containerWeatherDataSpan">
      <span class="headerSpan">Pressure</span>
-     <span class="data">{{this.pressureOutput}}</span>
+     <span class="data">{{data?.main.pressure}}</span>
    </div>
  </div>
 </div>

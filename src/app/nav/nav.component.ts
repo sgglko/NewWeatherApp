@@ -101,6 +101,7 @@ export class NavComponent implements OnInit {
     this.metric.style.color = "red";
     this.imperial.style.color = "black";
     this.default.style.color = "black";
+    this.apiService.apiCall();
 
   }
   setImperial() {
@@ -109,6 +110,7 @@ export class NavComponent implements OnInit {
     this.metric.style.color = "black";
     this.imperial.style.color = "red";
     this.default.style.color = "black";
+    this.apiService.apiCall();
   }
   setDefault() {
     this.units = "";
@@ -116,6 +118,7 @@ export class NavComponent implements OnInit {
     this.metric.style.color = "black";
     this.imperial.style.color = "black";
     this.default.style.color = "red";
+    this.apiService.apiCall();
   }
 
   //Custom Search
