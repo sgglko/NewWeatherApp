@@ -1,0 +1,59 @@
+.containerOutput {
+  height: 32vw;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 2vw;
+  border: 2px solid black;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.containerLocationData {
+  margin-top: 2vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.LocationDataSpan {
+  margin-left: 1vw;
+  font-size: 40px;
+  border: 1px solid #0fd984;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.containerWeatherData {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.containerWeatherDataSpan {
+  width: 29%;
+  margin: 1%;
+  height: 10vw;
+  border: 1px solid #0fd984;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.data {
+  margin-top: 2vw;
+  font-size: 40px;
+}
+
+.dataDescription {
+  margin-top: 2vw;
+  font-size: 20px;
+}
+
+.containerWeatherDataSpan:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.LocationDataSpan:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}

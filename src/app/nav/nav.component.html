@@ -1,0 +1,127 @@
+<div id="NavBarContainer">
+  <div id="QuickSearchContainer">
+    <form [formGroup]="inputFormDefault" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        id="name"
+        class="defaultFormInput"
+        formControlName="cityName"
+        placeholder="QuickSearch.."
+      >
+    </form>
+  </div>
+  <div id="HeaderContainer">
+    <h1 id="Header">Weather App 2.0</h1>
+  </div>
+  <div id="CustomSearchContainer">
+    <button id="CustomSearchButton" (click)="showCustomSearch()" >Custom Search</button>
+  </div>
+  <div class="SettingsContainer">
+    <button class="dropButtonUnits" (click)="chooseUnits()">
+      <i class="fa fa-gear"></i>
+    </button>
+    <button class="dropButtonLanguage" (click)="chooseLanguages()">
+      <i class="fa fa-globe"></i>
+    </button>
+
+  </div>
+</div>
+<div class="containerUnits">
+  <button class="unitsButtonMetric" (click)="setMetric()">Metric</button>
+  <button class="unitsButtonImperial" (click)="setImperial()">Imperial</button>
+  <button class="unitsButtonDefault" (click)="setDefault()">Default</button>
+</div>
+
+<div class="containerLanguage">
+  <button>English</button>
+</div>
+
+<div class="CustomSearch" *ngIf="customSearch">
+  <div class="ContainerSwitch">
+    <span class="SearchLabel location">Search by Location</span>
+    <form >
+      <label class="switch">
+        <input
+          type="checkbox"
+          [formControl]="switch"
+          (click)="switchSubmit()"
+        >
+        <span class="slider round"></span>
+      </label>
+    </form>
+    <span class="SearchLabel coordinates">Search by coordinates</span>
+  </div>
+  <div class="containerCoordinates" *ngIf="this.switch.value">
+    <form [formGroup]="CoordinatesFormGroup" (ngSubmit)="submitCoordinatesData()">
+      <div>
+        <div>
+          <input
+            type="text"
+            class="inputCoordinates"
+            placeholder="Latitude"
+            formControlName="latitude"
+          >
+          <input
+            type="text"
+            class="inputCoordinates"
+            placeholder="Longitude"
+            formControlName="longitude"
+          >
+        </div>
+        <div class="containerSearchButtonCoordinates">
+          <button class="SearchButtonCoordinates" type="submit" (click)="switchInput()" [disabled]="!CoordinatesFormGroup.valid">Search</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="containerLocation" *ngIf="!this.switch.value">
+    <div class="requiredInput">
+      <form class="requiredInput" [formGroup]="LocationFormGroup" (ngSubmit)="submitLocationData()">
+        <div [hidden]="LocationFormGroup.value.cityID || LocationFormGroup.value.ZIPCode">
+          <input
+            type="text"
+            class="inputLocation"
+            placeholder="City Name"
+            formControlName="cityName"
+          >
+        </div>
+        <div [hidden]="LocationFormGroup.value.cityName || LocationFormGroup.value.ZIPCode">
+          <input
+            type="text"
+            class="inputLocation"
+            placeholder="City ID"
+            formControlName="cityID"
+          >
+        </div>
+        <div [hidden]="LocationFormGroup.value.cityName || LocationFormGroup.value.cityID">
+          <input
+            type="text"
+            class="inputLocation"
+            placeholder="ZIP Code"
+            formControlName="ZIPCode"
+          >
+        </div>
+        <div [hidden]="LocationFormGroup.value.cityID || (!LocationFormGroup.value.cityName && !LocationFormGroup.value.ZIPCode) ">
+          <input
+          type="text"
+          class="inputLocation"
+          placeholder="Country Code"
+          formControlName="countryCode"
+          >
+        </div>
+        <div [hidden]="!LocationFormGroup.value.cityName">
+          <input
+          type="text"
+          class="inputLocation"
+          placeholder="State Code"
+          formControlName="stateCode"
+          >
+        </div>
+        <button class="SearchButtonLocation" type="submit" [disabled]="!LocationFormGroup.valid || !(LocationFormGroup.value.cityName || LocationFormGroup.value.cityID || LocationFormGroup.value.ZIPCode)">Search</button>
+      </form>
+    </div>
+
+
+  </div>
+</div>

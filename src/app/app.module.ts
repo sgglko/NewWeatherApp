@@ -3,15 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { MapComponent } from './map/map.component';
+import { OutputComponent } from './output/output.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent,
+    MapComponent,
+    OutputComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
