@@ -15,16 +15,16 @@ export class OutputComponent implements OnInit {
     private eventService: EventService,
   ) {}
 
-  public cityNameOutput?: string = "London";
-  public countryOutput?: string = "UK";
-  public longitudeOutput?: string = "12.345";
-  public latitudeOutput?: string = "67.890";
-  public tempOutput?: string = "20.5";
-  public windSpeedOutput?: string = "13.3";
-  public humidityOutput?: string = "50";
-  public pressureOutput?: string = "1020";
-  public weatherOutput?: string = "Sun";
-  public weatherDescriptionOutput?: string = "Supernova Sun";
+  public cityNameOutput?: string = "";
+  public countryOutput?: string = "";
+  public longitudeOutput?: string = "";
+  public latitudeOutput?: string = "";
+  public tempOutput?: string = "";
+  public windSpeedOutput?: string = "";
+  public humidityOutput?: string = "";
+  public pressureOutput?: string = "";
+  public weatherOutput?: string = "";
+  public weatherDescriptionOutput?: string = "";
   public search: boolean = false;
 
   ngOnInit(): void {
