@@ -81,6 +81,8 @@ export class NavComponent implements OnInit {
   })
 
   onSubmit() {
+    this.dataService.setData("latitude", "");
+    this.dataService.setData("longitude", "");
     this.cityName = this.inputFormDefault.value.cityName;
     this.dataService.setData("cityName", this.cityName);
     this.apiService.apiCall();
@@ -199,6 +201,8 @@ export class NavComponent implements OnInit {
 
   //submit Data to Service
   submitLocationData() {
+    this.dataService.setData("latitude", "");
+    this.dataService.setData("longitude", "");
     this.dataService.setData("cityName", this.LocationFormGroup.value.cityName);
     this.dataService.setData("countryCode", this.LocationFormGroup.value.countryCode);
     this.dataService.setData("stateCode", this.LocationFormGroup.value.stateCode);
@@ -215,6 +219,7 @@ export class NavComponent implements OnInit {
     this.apiService.apiCall()
     this.LocationFormGroup.reset();
     this.CoordinatesFormGroup.reset();
+
   }
 
 

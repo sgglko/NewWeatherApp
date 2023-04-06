@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  private data: any = {
+  public data: any = {
     "cityName":"",
     "cityID":"",
     "countryCode":"",

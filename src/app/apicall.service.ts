@@ -10,7 +10,6 @@ export class APICallService {
   private apiKey = "&appid=8ef5cb0f4c7d95e295f21af94d6d3698";
   private apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
   private finalAPI: string | undefined;
-  public APIData: any;
 
   constructor(
     private dataService: DataService,
